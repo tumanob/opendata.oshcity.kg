@@ -1,0 +1,40 @@
+default:
+  extensions:
+    Behat\MinkExtension\Extension:
+      goutte: ~
+      selenium2: ~
+      base_url: http://127.0.0.1:8888
+      default_session: 'goutte'
+      javascript_session: 'selenium2'
+      files_path: "files"
+    Drupal\DrupalExtension\Extension:
+      blackbox: ~
+      drupal:
+        drupal_root: 'drupal'
+      drush:
+        root: "drupal"
+      api_driver: "drupal"
+      region_map:
+        content: ".region-content"
+        toolbar: ".tabs--primary"
+        footer: "#footer"
+        header: "#header"
+        modal: "#modalContent"
+        left header: "#header-left"
+        right header: "#header-right"
+        right sidebar: "#column-right"
+        dashboards: ".view-data-dashboards table tbody"
+      text:
+        log_out: "Log out"
+        log_in: "Log in"
+local:
+  extensions:
+    Behat\MinkExtension\Extension:
+      base_url: http://dkan.local
+      selenium2:
+        wd_host: http://127.0.0.1:4444/wd/hub
+    Drupal\DrupalExtension\Extension:
+      drupal:
+        drupal_root: '/var/www/dkan/webroot'
+      drush:
+        root: '/var/www/dkan/webroot'
