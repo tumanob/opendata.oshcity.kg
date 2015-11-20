@@ -3726,3 +3726,23 @@ input.form-submit.features-refresh-button { background: #0A77BD; }
 
 .dropdown-menu.slick-contextmenu { background: #fff; }
 .dropdown-menu.slick-contextmenu li { padding-left: 5px; padding-right: 5px; }
+
+
+/*   tumanov adon to default theme css*/
+
+.language-switcher-locale-url li
+{     display: inline-block;
+    float: left;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+  }
+
+  .language-switcher-locale-url li.active a
+  {
+          color: #ccc;
+          text-decoration: underline;
+  }
+.language-switcher-locale-url{
+    list-style: none outside none !important;
+}

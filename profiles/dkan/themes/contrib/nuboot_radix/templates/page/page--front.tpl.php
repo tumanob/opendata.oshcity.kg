@@ -27,6 +27,11 @@
         $search = _block_get_renderable_array(_block_render_blocks(array($block)));
         print render($search);
       endif;
+  
+    ?>
+    <?php
+      $block = module_invoke('locale', 'block_view', 'language');
+      print $block['content'];
     ?>
   </div>
   <div class="navigation-wrapper">
@@ -48,7 +53,7 @@
               <?php print render($main_menu); ?>
             </ul>
           <?php endif; ?>
-          
+
           <!-- user menu -->
           <?php
             $block = block_load('dkan_sitewide', 'dkan_sitewide_user_menu');
@@ -75,7 +80,7 @@
 
     <div class="main-row">
 
-      <section> 
+      <section>
         <a id="main-content"></a>
         <?php print render($title_prefix); ?>
         <?php if (!empty($title) && (arg(0) == 'admin' || arg(1) == 'add' || arg(1) == 'edit')): ?>

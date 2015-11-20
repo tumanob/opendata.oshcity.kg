@@ -33,6 +33,11 @@
         print render($search);
       endif;
     ?>
+
+    <?php
+      $block = module_invoke('locale', 'block_view', 'language');
+      print $block['content'];
+    ?>
   </div>
   <div class="navigation-wrapper">
     <div class="container">
