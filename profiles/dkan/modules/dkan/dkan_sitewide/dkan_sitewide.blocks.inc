@@ -239,7 +239,7 @@ function dkan_sitewide_social_block() {
           'html' => TRUE,
         )),
         'class' => array('nav-item'),
-      ),   
+      ),
       'reddit' => array(
         'data' => l('<i class="ckan-icon ckan-icon-fb fa fa-lg fa-reddit-square"></i> ' . t('Reddit'),
           'http://www.reddit.com/submit', array(
