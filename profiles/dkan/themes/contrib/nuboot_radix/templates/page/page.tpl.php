@@ -11,7 +11,7 @@
  */
 ?>
 <header id="header" class="header" role="header">
-  <div class="branding container">
+<div class="branding container">  <!--
     <?php if ($logo): ?>
       <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
         <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
@@ -24,7 +24,7 @@
     <?php endif; ?>
     <?php if (!empty($site_slogan)): ?>
       <div class="site-slogan"><?php print $site_slogan; ?></div>
-    <?php endif; ?>
+    <?php endif; ?>-->
     <!-- views exposed search -->
     <?php
       $block = block_load('dkan_sitewide', 'dkan_sitewide_search_bar');
@@ -32,12 +32,14 @@
         $search = _block_get_renderable_array(_block_render_blocks(array($block)));
         print render($search);
       endif;
-    ?>
 
+    ?>
+    <div class="langtop">
     <?php
       $block = module_invoke('locale', 'block_view', 'language');
       print $block['content'];
     ?>
+    </div>
   </div>
   <div class="navigation-wrapper">
     <div class="container">
@@ -108,9 +110,9 @@
 
 <footer id="footer" class="footer" role="footer">
   <div class="container">
-    <?php if ($copyright): ?>
-      <small class="copyright pull-left"><?php print $copyright; ?></small>
-    <?php endif; ?>
     <small class="pull-right"><?php print render($page['footer']); ?></small>
   </div>
+  <?php if ($copyright): ?>
+    <small class="copyright pull-left"><?php print $copyright; ?></small>
+  <?php endif; ?>
 </footer>
